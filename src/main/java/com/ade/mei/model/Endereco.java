@@ -13,6 +13,9 @@ public class Endereco {
 	private String estado;
 	
 	@Column
+	private String cidade;
+	
+	@Column
 	private String bairro;
 	
 	@Column 
@@ -48,6 +51,16 @@ public class Endereco {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+	
+
+	public String getCidade() {
+		return cidade;
+	}
+
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
 
 

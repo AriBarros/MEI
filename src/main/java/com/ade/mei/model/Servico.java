@@ -63,7 +63,8 @@ public class Servico {
 	}
 
 	public void setMeis(List<Mei> meis) {
-		this.meis = meis;
+		this.meis.clear();
+		this.meis.addAll(meis);
 	}
 
 	public List<Oferta> getOfertas() {
@@ -71,7 +72,8 @@ public class Servico {
 	}
 
 	public void setOfertas(List<Oferta> ofertas) {
-		this.ofertas = ofertas;
+		this.ofertas.clear();
+		this.ofertas.addAll(ofertas);
 	}
 
 	public List<Categoria> getCategorias() {
@@ -79,7 +81,8 @@ public class Servico {
 	}
 
 	public void setCategorias(List<Categoria> categorias) {
-		this.categorias = categorias;
+		this.categorias.clear();
+		this.categorias.addAll(categorias);
 	}
 	
 	

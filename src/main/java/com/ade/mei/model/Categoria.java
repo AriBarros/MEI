@@ -45,7 +45,8 @@ public class Categoria {
 	}
 
 	public void setServicos(List<Servico> servicos) {
-		this.servicos = servicos;
+		this.servicos.clear();
+		this.servicos.addAll(servicos);
 	}
 	
 	
