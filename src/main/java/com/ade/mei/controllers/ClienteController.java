@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ade.mei.model.Cliente;
+import com.ade.mei.repository.ClienteRepository;
 
-import exception.ResourceNotFoundException;
-import repository.ClienteRepository;
+import com.ade.mei.exception.ResourceNotFoundException;
 
 @RestController
 public class ClienteController {

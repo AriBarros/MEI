@@ -14,10 +14,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ade.mei.exception.ResourceNotFoundException;
 import com.ade.mei.model.Categoria;
+import com.ade.mei.repository.CategoriaRepository;
 
-import exception.ResourceNotFoundException;
-import repository.CategoriaRepository;
+
 
 @RestController
 public class CategoriaController {

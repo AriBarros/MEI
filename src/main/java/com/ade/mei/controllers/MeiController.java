@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.ade.mei.model.Mei;
+import com.ade.mei.repository.MeiRepository;
 
-import exception.ResourceNotFoundException;
-import repository.MeiRepository;
+import com.ade.mei.exception.ResourceNotFoundException;
 
 @RestController
 public class MeiController {

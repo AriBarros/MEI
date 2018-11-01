@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ade.mei.model.Cliente;
 import com.ade.mei.model.Endereco;
+import com.ade.mei.repository.EnderecoRepository;
 
-import exception.ResourceNotFoundException;
-import repository.EnderecoRepository;
+import com.ade.mei.exception.ResourceNotFoundException;
 
 @RestController
 public class EnderecoController {
