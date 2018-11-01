@@ -27,7 +27,7 @@ public class Servico {
 	private List<Oferta> ofertas = new ArrayList<>() ;
 	
 	@ManyToMany(mappedBy = "servicos")
-	private List<Categoria> categorias;
+	private List<Categoria> categorias = new ArrayList<>() ;
 	
 	public Servico ()
 	{

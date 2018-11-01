@@ -42,6 +42,7 @@ public class CategoriaController {
 		return categoriaRepository.findById(categoriaId)
 				.map(categoria -> {
 					categoria.setNome(categoriaRequest.getNome());
+					categoria.setServicos(categoriaRequest.getServicos());
 					return categoriaRepository.save(categoria);
 		}).orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada com o ID: " + categoriaId));
 	}
