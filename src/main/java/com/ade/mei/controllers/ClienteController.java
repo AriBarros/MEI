@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ade.mei.model.Categoria;
 import com.ade.mei.model.Cliente;
 import com.ade.mei.repository.ClienteRepository;
 
@@ -29,6 +30,16 @@ public class ClienteController {
 	public Page<Cliente> getClientes(Pageable pageable){
 		return clienteRepository.findAll(pageable);
 	}
+	
+	@GetMapping("/cliente/{clienteId}")
+	public Cliente getCliente(@PathVariable Long clienteId)
+	{
+		
+		return clienteRepository.findById(clienteId).
+				orElseThrow(() -> new ResourceNotFoundException("cliente não encontrada com o ID: " + clienteId));
+	
+	}
+	
 	
 	@PostMapping("/cliente")
 	public Cliente criarNovoCliente(@Valid @RequestBody Cliente cliente) {

@@ -1,5 +1,7 @@
 package com.ade.mei.controllers;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,16 @@ public class CategoriaController {
 	public Page<Categoria> getCategorias(Pageable pageable){
 		return categoriaRepository.findAll(pageable);
 	}
+	
+	@GetMapping("/categoria/{categoriaId}")
+	public Categoria getCategoria(@PathVariable Long categoriaId)
+	{
+		
+		return categoriaRepository.findById(categoriaId).
+				orElseThrow(() -> new ResourceNotFoundException("categoria não encontrada com o ID: " + categoriaId));
+	
+	}
+	
 	
 	@PostMapping("/categoria")
 	public Categoria criarNovaCategoria(@Valid @RequestBody Categoria categoria) {

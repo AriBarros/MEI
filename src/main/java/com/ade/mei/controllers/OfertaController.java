@@ -31,6 +31,11 @@ public class OfertaController {
 		return ofertaRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/oferta/{ofertaId}")
+	public Oferta getOferta( Long ofertaId){
+		return ofertaRepository.findById(ofertaId).orElseThrow(() -> new ResourceNotFoundException("oferta não encontrada com o ID: " + ofertaId));
+	}
+	
 	@PostMapping("/oferta")
 	public Oferta criarNovaOferta(@Valid @RequestBody Oferta oferta)
 	{

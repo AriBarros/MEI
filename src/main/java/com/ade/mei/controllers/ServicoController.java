@@ -30,6 +30,11 @@ public class ServicoController {
 		return servicoRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/servico/{servicoId}")
+	public Servico getServico(Long servicoId){
+		return servicoRepository.findById(servicoId).orElseThrow(() -> new ResourceNotFoundException("servico não encontrado com o ID: " + servicoId));
+	}
+	
 	@PostMapping("/servico")
 	public Servico criarNovoServico(@Valid @RequestBody Servico servico)
 	{

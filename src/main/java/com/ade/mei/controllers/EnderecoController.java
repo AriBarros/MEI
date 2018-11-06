@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ade.mei.model.Categoria;
 import com.ade.mei.model.Cliente;
 import com.ade.mei.model.Endereco;
 import com.ade.mei.repository.EnderecoRepository;
@@ -30,6 +31,16 @@ public class EnderecoController {
 	public Page<Endereco> getEnderecos(Pageable pageable){
 		return enderecoRepository.findAll(pageable);
 	}
+	
+	@GetMapping("/endereco/{enderecoId}")
+	public Endereco getEndereco(@PathVariable Long enderecoId)
+	{
+		
+		return enderecoRepository.findById(enderecoId).
+				orElseThrow(() -> new ResourceNotFoundException("Endereço não encontrada com o ID: " + enderecoId));
+	
+	}
+	
 	
 	@PostMapping("/endereco")
 	public Endereco criarNovoEndereco(@Valid @RequestBody Endereco endereco) {

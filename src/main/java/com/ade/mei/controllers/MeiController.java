@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
+import com.ade.mei.model.Categoria;
 import com.ade.mei.model.Mei;
 import com.ade.mei.repository.MeiRepository;
 
@@ -30,6 +30,16 @@ public class MeiController {
 	public Page<Mei> getMeis(Pageable pageable){
 		return meiRepository.findAll(pageable);
 	}
+	
+	@GetMapping("/mei/{meiId}")
+	public Mei getMei(@PathVariable Long meiId)
+	{
+		
+		return meiRepository.findById(meiId).
+				orElseThrow(() -> new ResourceNotFoundException("categoria não encontrada com o ID: " + meiId));
+	
+	}
+	
 	
 	@PostMapping("/mei")
 	public Mei criarNovoMei(@Valid @RequestBody Mei  mei) {

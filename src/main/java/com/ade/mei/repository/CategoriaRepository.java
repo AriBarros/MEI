@@ -7,5 +7,6 @@ import com.ade.mei.model.Categoria;
 
 @Repository
 public interface CategoriaRepository extends JpaRepository <Categoria, Long>{
+	
 
 }
