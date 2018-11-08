@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+let xhr = new XMLHttpRequest();
+xhr.open('GET', '/endereco/7');
+
+xhr.onload = function() {
+	
+	//alert(`Loaded: ${this.status} ${this.responseText}`);
+	
+if(this.status != 200) console.log("Error!");
+	else 
+	{
+			console.log(this.responseText);
+			let a = JSON.parse(this.responseText);
+			console.log(a);
+	}
+	
+};
+	
+
+	
+xhr.onerror = () => console.log('error!'); 
+	
+xhr.send();
+
+
+
+
+
+
+
+
+let xhr2 = new XMLHttpRequest();
+xhr2.open('POST', '/endereco');
+
+xhr2.onload = function(){
+
+	if(this.status == 200){
+		
+			console.log("Sucesso!");
+			console.log(JSON.parse(this.responseText));
+	}
+};
+
+xhr2.setRequestHeader('Content-Type', 'application/json');
+
+let novo_u = {"estado": "Alagoas", "cidade": "maceio", "bairro": "Armazem", "rua": "rua da criatividade", "numero": "8080"};
+novo_u.estado = "Alagoas";
+
+
+xhr2.send(JSON.stringify(novo_u));
+
+</script>
+
+</body>
+</html>
