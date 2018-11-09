@@ -2,19 +2,55 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+	<script type="text/javascript" src="js/mylist.js" async></script>
+
+<title>MEI</title>
+
+<style>
+table{
+	border: 2px solid border- black;
+}
+</style>
+
 </head>
 <body>
-
-	<table id = "enderecos">
-
-		<th>Estado</th>
-		<th>Cidade</th>
-		<th>Bairro</th>
-		<th>Rua</th>
-		<th>Numero</th>
+	
+	
+	
+	<table id = "enderecos" border=1 cellspacing=0 cellpadding=2 bordercolor="666633">
+	
+	
+		<tr>
+			<th>Id</th>
+			<th>Estado</th>
+			<th>Cidade</th>
+			<th>Bairro</th>
+			<th>Rua</th>
+			<th>Numero</th>
+		</tr>
+		
 		
 	</table>
+	
+	<br>
+	
+	<input type="text" name="Estado" id="estado" placeholder="Estado">
+			<br>
+			<input type="text" name="Cidade" id="cidade" placeholder="Cidade">
+			<br>
+			<input type="text" name="Bairro" id="bairro" placeholder="Bairro">
+			<br>
+			<input type="text" name="Rua" id="rua" placeholder="Rua">
+			<br>
+			<input type="text" name="Numero" id="numero" placeholder="Numero">
+
+			<br><br>
+
+			<button onclick="cadastrar()">Cadastrar</button>
+	
+	
+	
+	
 
 </body>
 </html>
