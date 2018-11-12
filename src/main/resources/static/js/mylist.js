@@ -85,6 +85,46 @@ function updateTable()
 
 }
 
+function atualizarEndereco()
+{
+	
+	let xhr2 = new XMLHttpRequest();
+	
+	xhr2.open('PUT', '/endereco/'+document.getElementBy("endAt").value);
+	xhr2.onload = function()
+	{
+		
+		if(this.status == 200)
+		{
+
+			
+			createTable()
+			
+			
+		}
+		
+		
+	};
+	
+	
+	
+xhr2.setRequestHeader('Content-Type', 'application/json');
+	
+	let atualizar_end = {"estado": document.getElementById("estado2").value, 
+			"cidade": document.getElementById("cidade2").value, 
+			"bairro": document.getElementById("bairro2").value, 
+			"rua": document.getElementById("rua2").value, 
+			"numero": document.getElementById("numero2").value};
+	
+	
+	xhr2.send(JSON.stringify(atualizar_end));
+	
+	
+	
+
+
+}
+
 
 function createTable(){
 		let xhr2 = new XMLHttpRequest();
