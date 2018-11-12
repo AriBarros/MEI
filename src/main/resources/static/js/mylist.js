@@ -33,6 +33,28 @@ function cadastrar()
 }
 
 
+function deletarEndereco()
+{
+	let xhr2 = new XMLHttpRequest();
+	xhr2.open('DELETE', '/endereco/'+document.getElementById("end").value);
+	
+	xhr2.onload = function()
+	{
+		
+		if(this.status == 200)
+			{
+			
+			createTable()
+			
+			}
+		
+	};
+	
+	xhr2.send();
+
+}
+
+
 
 
 function updateTable()
@@ -75,7 +97,10 @@ function createTable(){
 					let r = JSON.parse(this.responseText);
 					console.log(r);
 					
+					
 					let tb = document.getElementById("enderecos");
+					
+					tb.innerHTML = ''
 					for(let i=0; i<r.content.length; i++){
 						let p = r.content[i];
 						tb.innerHTML +=  `<tr><th>${p.id}</th><th>${p.estado}</th><th>${p.cidade}</th><th>${p.bairro}</th><th>${p.rua}</th><th>${p.numero}</th></tr>`
