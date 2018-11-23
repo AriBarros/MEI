@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 
 
 @Entity
@@ -47,6 +48,13 @@ public class Categoria {
 	public void setServicos(List<Servico> servicos) {
 		this.servicos.clear();
 		this.servicos.addAll(servicos);
+	}
+	
+	public void addServico( @Valid Servico servico)
+	{
+		
+		this.servicos.add(servico);
+		
 	}
 	
 	

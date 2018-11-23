@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 
 @Entity
@@ -58,6 +60,8 @@ public class Servico {
 		this.descricao = descricao;
 	}
 
+	
+	@JsonIgnore
 	public List<Mei> getMeis() {
 		return meis;
 	}
@@ -67,6 +71,8 @@ public class Servico {
 		this.meis.addAll(meis);
 	}
 
+	
+	@JsonIgnore
 	public List<Oferta> getOfertas() {
 		return ofertas;
 	}
@@ -76,6 +82,7 @@ public class Servico {
 		this.ofertas.addAll(ofertas);
 	}
 
+	@JsonIgnore
 	public List<Categoria> getCategorias() {
 		return categorias;
 	}

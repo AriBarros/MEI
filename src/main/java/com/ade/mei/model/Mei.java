@@ -2,6 +2,8 @@ package com.ade.mei.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Mei extends Usuario {
 	
@@ -37,6 +39,7 @@ public class Mei extends Usuario {
 		DescricaoPessoal = descricaoPessoal;
 	}
 
+	@JsonIgnore
 	public Oferta getOferta() {
 		return oferta;
 	}
