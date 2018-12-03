@@ -4,7 +4,9 @@ public class OfertaValidacao {
 	
 	public boolean validarPreco(String preco) {
 		
-		if(preco.contains("-") || preco == null) return false;
+		if(preco == null) return false;
+		if(preco.isEmpty()) return false;
+		if(preco.contains("-")) return false;
 	
 		return true;
 	}

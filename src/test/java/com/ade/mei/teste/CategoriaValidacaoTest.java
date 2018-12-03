@@ -6,9 +6,6 @@ import org.junit.Test;
 
 import com.ade.mei.validacao.CategoriaValidacao;
 
-import br.edu.ifal.servico.ServicoValidacao;
-import junit.framework.Assert;
-
 public class CategoriaValidacaoTest {
 
 	@Test
@@ -19,7 +16,7 @@ public class CategoriaValidacaoTest {
 		
 		CategoriaValidacao categoria = new CategoriaValidacao();
 		boolean validacaoDaCategoriaRetornada = categoria.validarNome(nome);
-		Assert.assertEquals(true, validacaoDaCategoriaRetornada);
+		assertEquals(true, validacaoDaCategoriaRetornada);
 		
 	}
 	
@@ -31,7 +28,7 @@ public class CategoriaValidacaoTest {
 		
 		CategoriaValidacao categoria = new CategoriaValidacao();
 		boolean validacaoDaCategoriaRetornada = categoria.validarNome(nome);
-		Assert.assertEquals(false, validacaoDaCategoriaRetornada);
+		assertEquals(false, validacaoDaCategoriaRetornada);
 			
 	}
 	
@@ -43,7 +40,7 @@ public class CategoriaValidacaoTest {
 		
 		CategoriaValidacao categoria = new CategoriaValidacao();
 		boolean validacaoDaCategoriaRetornada = categoria.validarNome(nome);
-		Assert.assertEquals(false, validacaoDaCategoriaRetornada);
+		assertEquals(false, validacaoDaCategoriaRetornada);
 			
 	}
 	
@@ -55,7 +52,7 @@ public class CategoriaValidacaoTest {
 		
 		CategoriaValidacao categoria = new CategoriaValidacao();
 		boolean validacaoDaCategoriaRetornada = categoria.validarNome(nome);
-		Assert.assertEquals(false, validacaoDaCategoriaRetornada);
+		assertEquals(false, validacaoDaCategoriaRetornada);
 			
 	}
 

@@ -4,11 +4,11 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import br.edu.ifal.servico.ServicoValidacao;
 import junit.framework.Assert;
 
 public class ServicoValidacaoTest {
-
+	
+	@Test
 	public void naoValidarNomeComNumeros() {
 		
 		String nome = "Consert0";
@@ -20,6 +20,7 @@ public class ServicoValidacaoTest {
 			
 	}
 	
+	@Test
 	public void naoValidarNomeComCaracteresEspeciais() {
 		
 		String nome = "Cons&rto";
@@ -30,6 +31,7 @@ public class ServicoValidacaoTest {
 		
 	}
 	
+	@Test
 	public void naoValidarNomeNulo() {
 		
 		String nome = null;
@@ -40,6 +42,7 @@ public class ServicoValidacaoTest {
 		
 	}
 	
+	@Test
 	public void naoValidarNomeVazio() {
 		
 		String nome = "";

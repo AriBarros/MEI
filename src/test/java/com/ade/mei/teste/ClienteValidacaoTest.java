@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import com.ade.mei.validacao.ClienteValidacao;
 
-import br.edu.ifal.servico.ServicoValidacao;
 import junit.framework.Assert;
 
 public class ClienteValidacaoTest {

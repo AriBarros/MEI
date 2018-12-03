@@ -6,9 +6,6 @@ import org.junit.Test;
 
 import com.ade.mei.validacao.OfertaValidacao;
 
-import br.edu.ifal.servico.ServicoValidacao;
-import junit.framework.Assert;
-
 public class OfertaValidacaoTest {
 
 	@Test
@@ -18,7 +15,7 @@ public class OfertaValidacaoTest {
 		
 		OfertaValidacao ofertav = new OfertaValidacao();
 		boolean validacaoDoPrecoRetornada = ofertav.validarPreco(preco);
-		Assert.assertEquals(false, validacaoDoPrecoRetornada);
+		assertEquals(false, validacaoDoPrecoRetornada);
 			
 	}
 	
@@ -29,7 +26,7 @@ public class OfertaValidacaoTest {
 		
 		OfertaValidacao ofertav = new OfertaValidacao();
 		boolean validacaoDoPrecoRetornada = ofertav.validarPreco(preco);
-		Assert.assertEquals(false, validacaoDoPrecoRetornada);
+		assertEquals(false, validacaoDoPrecoRetornada);
 			
 	}
 	
@@ -40,7 +37,7 @@ public class OfertaValidacaoTest {
 		
 		OfertaValidacao ofertav = new OfertaValidacao();
 		boolean validacaoDoPrecoRetornada = ofertav.validarPreco(preco);
-		Assert.assertEquals(false, validacaoDoPrecoRetornada);
+		assertEquals(false, validacaoDoPrecoRetornada);
 			
 	}
 	
@@ -52,7 +49,7 @@ public class OfertaValidacaoTest {
 		OfertaValidacao ofertav = new OfertaValidacao();
 		boolean validacaoDaDisponibilidadeRetornada = ofertav.validarDisponibilidade(disponibilidade);
 		
-		Assert.assertEquals(true, validacaoDaDisponibilidadeRetornada);
+		assertEquals(true, validacaoDaDisponibilidadeRetornada);
 			
 	}
 	
