@@ -5,7 +5,6 @@ public class UsuarioValidacao {
 	public boolean validarUsuario(String nome) {
 		
 		
-		
 		for (int i = 0; i < nome.length(); i++) {
 	          if (!Character.isAlphabetic((nome.charAt(i)))) {
 	              

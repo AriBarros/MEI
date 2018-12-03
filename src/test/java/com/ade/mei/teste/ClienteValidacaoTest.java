@@ -44,5 +44,27 @@ public class ClienteValidacaoTest {
 		Assert.assertEquals(false, validacaoDoCpfRetornada);
 			
 	}
+	
+	public void naoValidarCpfNulo() {
+		
+		String cpf = null;
+	
+		
+		ClienteValidacao cliente = new ClienteValidacao();
+		boolean validacaoDoCpfRetornada = cliente.validarCpf(cpf);
+		Assert.assertEquals(false, validacaoDoCpfRetornada);
+			
+	}
+	
+	public void naoValidarCpfVazio() {
+	
+		String cpf = "";
+	
+		
+		ClienteValidacao cliente = new ClienteValidacao();
+		boolean validacaoDoCpfRetornada = cliente.validarCpf(cpf);
+		Assert.assertEquals(false, validacaoDoCpfRetornada);
+			
+	}
 
 }

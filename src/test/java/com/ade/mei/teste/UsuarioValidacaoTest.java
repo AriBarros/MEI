@@ -35,6 +35,31 @@ public class UsuarioValidacaoTest {
 	}
 	
 	@Test
+	public void naoValidarNomeNulo() {
+		
+		String nome = null;
+		
+		
+		UsuarioValidacao user = new UsuarioValidacao();
+		boolean validacaoDoUsuarioRetornada = user.validarUsuario(nome);
+		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		
+	}
+	
+	@Test
+	public void naoValidarNomeVazio() {
+		
+		String nome = "";
+		
+		
+		UsuarioValidacao user = new UsuarioValidacao();
+		boolean validacaoDoUsuarioRetornada = user.validarUsuario(nome);
+		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		
+	}
+	
+	
+	@Test
 	public void validarDominioDoEmail() {
 		
 		String nome = "Janaine";
@@ -57,5 +82,7 @@ public class UsuarioValidacaoTest {
 		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
+	
+
 
 }

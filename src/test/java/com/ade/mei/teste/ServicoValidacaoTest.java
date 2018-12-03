@@ -30,9 +30,19 @@ public class ServicoValidacaoTest {
 		
 	}
 	
-	public void naoValidarNomeVazio() {
+	public void naoValidarNomeNulo() {
 		
 		String nome = null;
+		
+		com.ade.mei.validacao.ServicoValidacao servico = new com.ade.mei.validacao.ServicoValidacao();
+		boolean validacaoDoUsuarioRetornada = servico.validarServico(nome);
+		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		
+	}
+	
+	public void naoValidarNomeVazio() {
+		
+		String nome = "";
 		
 		com.ade.mei.validacao.ServicoValidacao servico = new com.ade.mei.validacao.ServicoValidacao();
 		boolean validacaoDoUsuarioRetornada = servico.validarServico(nome);

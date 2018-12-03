@@ -25,9 +25,21 @@ public class MeiValidacaoTest {
 	}
 	
 	@Test
-	public void naoValidarCnpjVazio() {
+	public void naoValidarCnpjNulo() {
 		
 		String cnpj = null;
+	
+		
+		MeiValidacao mei = new MeiValidacao();
+		boolean validacaoDoCnpjRetornada = mei.validarCnpj(cnpj);
+		Assert.assertEquals(false, validacaoDoCnpjRetornada);
+			
+	}
+	
+	@Test
+	public void naoValidarCnpjVazio() {
+		
+		String cnpj = "";
 	
 		
 		MeiValidacao mei = new MeiValidacao();

@@ -1,17 +1,19 @@
 package com.ade.mei.validacao;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class CategoriaValidacao {
 	
 	public boolean validarNome(String nome) {
 		
-		for (int i = 0; i < nome.length(); i++) {
-	          if (!Character.isAlphabetic((nome.charAt(i)))) {
+		
+	        Pattern pattern = Pattern.compile("[0-9]");
+	  		Matcher match = pattern.matcher(nome);
 	              
-	        	  if(!nome.contains(" "))
-	        	   return false;
-	          }
-	     }
-			
+	        if(match.find() || nome == null || !nome.contains("^[a-Z]")) return false;
+	        
+	    	
 		return true;
 	
 	}

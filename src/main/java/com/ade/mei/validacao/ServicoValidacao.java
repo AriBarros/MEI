@@ -1,15 +1,21 @@
 package com.ade.mei.validacao;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ServicoValidacao {
 	
 	public boolean validarServico(String nome) {
 		
 		
-		for (int i = 0; i < nome.length(); i++)  
-			if (!Character.isAlphabetic((nome.charAt(i))) || nome == null)  return false;
-	         
-		return true;
-		
+        Pattern pattern = Pattern.compile("[0-9]");
+  		Matcher match = pattern.matcher(nome);
+              
+        if(match.find() || nome == null || !nome.contains("^[a-Z]")) return false;
+        
+    	
+        return true;
+
 		
 	}
 	

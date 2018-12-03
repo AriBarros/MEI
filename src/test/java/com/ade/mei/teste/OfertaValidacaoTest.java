@@ -23,9 +23,20 @@ public class OfertaValidacaoTest {
 	}
 	
 	@Test
-	public void naoValidarPrecoVazio() {
+	public void naoValidarPrecoNulo() {
 		
 		String preco = null;
+		
+		OfertaValidacao ofertav = new OfertaValidacao();
+		boolean validacaoDoPrecoRetornada = ofertav.validarPreco(preco);
+		Assert.assertEquals(false, validacaoDoPrecoRetornada);
+			
+	}
+	
+	@Test
+	public void naoValidarPrecoVazio() {
+		
+		String preco = "";
 		
 		OfertaValidacao ofertav = new OfertaValidacao();
 		boolean validacaoDoPrecoRetornada = ofertav.validarPreco(preco);

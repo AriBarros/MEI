@@ -12,7 +12,7 @@ public class OfertaValidacao {
 
 	public boolean validarDisponibilidade(String disponibilidade) {
 		
-		if(disponibilidade.contains("N")) return false;
+		if(disponibilidade.contains("N") || disponibilidade.contains("n")) return false;
 	
 		return true;
 	}
