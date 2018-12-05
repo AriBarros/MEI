@@ -296,6 +296,148 @@ function createTable(){
 }
 	
 	
+function cadastrarMei()
+{
+	let novo_mei = {"nome": document.getElementById("nome").value, 
+			"telefone": document.getElementById("tel").value, 
+			"cnpj": document.getElementById("cnpj").value, 
+			"DescricaoPessoal": document.getElementById("descP").value, 
+			"email": document.getElementById("email").value,
+			"senha": document.getElementById("senha").value};
+	
+	
+	
+	fetch("/mei",
+			{
+				
+				
+				method: "POST",
+				headers: {
+					"content-type": "application/JSON"
+				},
+				
+				body: JSON.stringify(novo_mei)
+			}). then(function (response)
+			{
+			
+				cadastrarEndereco();
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
 
 
-createTable();
+}
+
+
+ function cadastrarEndereco()
+{
+	
+	
+	let novo_endereco = {"estado": document.getElementById("estado").value, 
+			"cidade": document.getElementById("cidade").value, 
+			"bairro": document.getElementById("bairro").value, 
+			"rua": document.getElementById("rua").value, 
+			"numero": document.getElementById("numero").value};
+	
+	
+	
+	fetch("/endereco",
+	{
+		
+		
+		method: "POST",
+		headers: {
+			"content-type": "application/JSON"
+		},
+		
+		body: JSON.stringify(novo_endereco)
+	}). then(function (response)
+	{
+	
+		cadastrarServico();
+		
+		
+	}).catch(function (error){
+		
+		console.log(error);
+		
+	});
+	
+
+
+}
+ 
+ 
+function cadastrarServico()
+{
+	
+	
+	let novo_servico = {"nome": document.getElementById("nomeS").value, 
+			"descricao": document.getElementById("descS").value};
+	
+	
+	fetch("/servico",
+			{
+				
+				
+				method: "POST",
+				headers: {
+					"content-type": "application/JSON"
+				},
+				
+				body: JSON.stringify(novo_servico)
+			}). then(function (response)
+			{
+			
+				cadastrarOferta();
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
+			
+	
+	
+}
+
+
+function cadastrarOferta()
+{
+	
+	let nova_oferta = {"preco": document.getElementById("preco").value, 
+			"descrao": document.getElementById("disp").value};
+	
+	
+	fetch("/oferta",
+			{
+				
+				
+				method: "POST",
+				headers: {
+					"content-type": "application/JSON"
+				},
+				
+				body: JSON.stringify(nova_oferta)
+			}). then(function (response)
+			{
+			
+
+				alert("Cadastro Feito com Sucesso !!");
+				
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
+
+
+}
+
+
+
+//createTable();
