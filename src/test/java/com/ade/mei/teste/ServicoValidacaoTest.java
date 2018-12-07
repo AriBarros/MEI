@@ -15,7 +15,7 @@ public class ServicoValidacaoTest {
 		
 		com.ade.mei.validacao.ServicoValidacao servico = new com.ade.mei.validacao.ServicoValidacao();
 		boolean validacaoDoServicoRetornada = servico.validarServico(nome);
-		Assert.assertEquals(false, validacaoDoServicoRetornada);
+		assertEquals(false, validacaoDoServicoRetornada);
 			
 			
 	}
@@ -27,7 +27,7 @@ public class ServicoValidacaoTest {
 		
 		com.ade.mei.validacao.ServicoValidacao servico = new com.ade.mei.validacao.ServicoValidacao();
 		boolean validacaoDoUsuarioRetornada = servico.validarServico(nome);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
@@ -38,7 +38,7 @@ public class ServicoValidacaoTest {
 		
 		com.ade.mei.validacao.ServicoValidacao servico = new com.ade.mei.validacao.ServicoValidacao();
 		boolean validacaoDoUsuarioRetornada = servico.validarServico(nome);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
@@ -49,7 +49,7 @@ public class ServicoValidacaoTest {
 		
 		com.ade.mei.validacao.ServicoValidacao servico = new com.ade.mei.validacao.ServicoValidacao();
 		boolean validacaoDoUsuarioRetornada = servico.validarServico(nome);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
