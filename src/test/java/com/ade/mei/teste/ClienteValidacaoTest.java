@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import com.ade.mei.validacao.ClienteValidacao;
 
-import junit.framework.Assert;
 
 public class ClienteValidacaoTest {
 
@@ -18,10 +17,11 @@ public class ClienteValidacaoTest {
 		
 		ClienteValidacao cliente = new ClienteValidacao();
 		boolean validacaoDoCpfRetornada = cliente.validarCpf(cpf);
-		Assert.assertEquals(true, validacaoDoCpfRetornada);
+		assertEquals(true, validacaoDoCpfRetornada);
 			
 	}
 	
+	@Test
 	public void naoValidarCpfComLetras() {
 		
 		String cpf = "0811a332181";
@@ -29,10 +29,11 @@ public class ClienteValidacaoTest {
 		
 		ClienteValidacao cliente = new ClienteValidacao();
 		boolean validacaoDoCpfRetornada = cliente.validarCpf(cpf);
-		Assert.assertEquals(false, validacaoDoCpfRetornada);
+		assertEquals(false, validacaoDoCpfRetornada);
 			
 	}
 	
+	@Test
 	public void naoValidarCpfComVariosDigitos() {
 		
 		String cpf = "0811123533218123131";
@@ -40,10 +41,11 @@ public class ClienteValidacaoTest {
 		
 		ClienteValidacao cliente = new ClienteValidacao();
 		boolean validacaoDoCpfRetornada = cliente.validarCpf(cpf);
-		Assert.assertEquals(false, validacaoDoCpfRetornada);
+		assertEquals(false, validacaoDoCpfRetornada);
 			
 	}
 	
+	@Test
 	public void naoValidarCpfNulo() {
 		
 		String cpf = null;
@@ -51,10 +53,11 @@ public class ClienteValidacaoTest {
 		
 		ClienteValidacao cliente = new ClienteValidacao();
 		boolean validacaoDoCpfRetornada = cliente.validarCpf(cpf);
-		Assert.assertEquals(false, validacaoDoCpfRetornada);
+		assertEquals(false, validacaoDoCpfRetornada);
 			
 	}
 	
+	@Test
 	public void naoValidarCpfVazio() {
 	
 		String cpf = "";
@@ -62,7 +65,7 @@ public class ClienteValidacaoTest {
 		
 		ClienteValidacao cliente = new ClienteValidacao();
 		boolean validacaoDoCpfRetornada = cliente.validarCpf(cpf);
-		Assert.assertEquals(false, validacaoDoCpfRetornada);
+		assertEquals(false, validacaoDoCpfRetornada);
 			
 	}
 

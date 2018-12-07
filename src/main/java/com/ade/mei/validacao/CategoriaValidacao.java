@@ -15,7 +15,10 @@ public class CategoriaValidacao {
 	        if(nome == null) return false;
 	        if(nome.isEmpty()) return false;
 	        
-	        
+	        	
+	        	 
+	        	
+	             
 	    	
 		return true;
 	

@@ -44,6 +44,8 @@ public class CategoriaValidacaoTest {
 			
 	}
 	
+
+	
 	@Test
 	public void naoValidarNomeVazio() {
 		
