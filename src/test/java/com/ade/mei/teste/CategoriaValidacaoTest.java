@@ -11,7 +11,7 @@ public class CategoriaValidacaoTest {
 	@Test
 	public void validarNome() {
 		
-		//int id = 1;
+		
 		String nome = "Jogos";
 		
 		CategoriaValidacao categoria = new CategoriaValidacao();
@@ -23,20 +23,8 @@ public class CategoriaValidacaoTest {
 	@Test
 	public void naoValidarNomeComNumeros() {
 		
-		//int id = 1;
+		
 		String nome = "El3trônicos";
-		
-		CategoriaValidacao categoria = new CategoriaValidacao();
-		boolean validacaoDaCategoriaRetornada = categoria.validarNome(nome);
-		assertEquals(false, validacaoDaCategoriaRetornada);
-			
-	}
-	
-	@Test
-	public void naoValidarNomeNulo() {
-		
-		//int id = 1;
-		String nome = null;
 		
 		CategoriaValidacao categoria = new CategoriaValidacao();
 		boolean validacaoDaCategoriaRetornada = categoria.validarNome(nome);
@@ -47,7 +35,7 @@ public class CategoriaValidacaoTest {
 	@Test
 	public void naoValidarNomeVazio() {
 		
-		//int id = 1;
+		
 		String nome = "";
 		
 		CategoriaValidacao categoria = new CategoriaValidacao();
