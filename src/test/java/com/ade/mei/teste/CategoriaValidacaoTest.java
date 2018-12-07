@@ -21,6 +21,18 @@ public class CategoriaValidacaoTest {
 	}
 	
 	@Test
+	public void validarNomeComEspaco() {
+		
+		
+		String nome = "Montagem e manutenção";
+		
+		CategoriaValidacao categoria = new CategoriaValidacao();
+		boolean validacaoDaCategoriaRetornada = categoria.validarNome(nome);
+		assertEquals(true, validacaoDaCategoriaRetornada);
+		
+	}
+	
+	@Test
 	public void naoValidarNomeComNumeros() {
 		
 		
