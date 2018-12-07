@@ -20,7 +20,7 @@ public class MeiValidacaoTest {
 		
 		MeiValidacao mei = new MeiValidacao();
 		boolean validacaoDoCnpjRetornada = mei.validarCnpj(cnpj);
-		Assert.assertEquals(true, validacaoDoCnpjRetornada);
+		assertEquals(true, validacaoDoCnpjRetornada);
 			
 	}
 	
@@ -32,7 +32,7 @@ public class MeiValidacaoTest {
 		
 		MeiValidacao mei = new MeiValidacao();
 		boolean validacaoDoCnpjRetornada = mei.validarCnpj(cnpj);
-		Assert.assertEquals(false, validacaoDoCnpjRetornada);
+		assertEquals(false, validacaoDoCnpjRetornada);
 			
 	}
 	
@@ -44,7 +44,7 @@ public class MeiValidacaoTest {
 		
 		MeiValidacao mei = new MeiValidacao();
 		boolean validacaoDoCnpjRetornada = mei.validarCnpj(cnpj);
-		Assert.assertEquals(false, validacaoDoCnpjRetornada);
+		assertEquals(false, validacaoDoCnpjRetornada);
 			
 	}
 	
@@ -56,7 +56,7 @@ public class MeiValidacaoTest {
 		
 		MeiValidacao mei = new MeiValidacao();
 		boolean validacaoDoCnpjRetornada = mei.validarCnpj(cnpj);
-		Assert.assertEquals(false, validacaoDoCnpjRetornada);
+		assertEquals(false, validacaoDoCnpjRetornada);
 			
 	}
 	
@@ -68,7 +68,7 @@ public class MeiValidacaoTest {
 		
 		MeiValidacao mei = new MeiValidacao();
 		boolean validacaoDoCnpjRetornada = mei.validarCnpj(cnpj);
-		Assert.assertEquals(false, validacaoDoCnpjRetornada);
+		assertEquals(false, validacaoDoCnpjRetornada);
 			
 	}
 
