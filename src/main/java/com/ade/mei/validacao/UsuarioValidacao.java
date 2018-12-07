@@ -4,6 +4,7 @@ public class UsuarioValidacao {
 	
 	public boolean validarUsuario(String nome) {
 		
+		if(nome == null) return false;
 		
 		for (int i = 0; i < nome.length(); i++) {
 	          if (!Character.isAlphabetic((nome.charAt(i)))) {
@@ -28,6 +29,7 @@ public class UsuarioValidacao {
 	
 	public boolean validarTelefone(String telefone) {
 		
+		if(telefone == null) return false;
 		
 		for (int i = 0; i < telefone.length(); i++) {
 	          if (Character.isAlphabetic((telefone.charAt(i)))) {
