@@ -17,7 +17,7 @@ public class UsuarioValidacaoTest {
 		
 		UsuarioValidacao user = new UsuarioValidacao();
 		boolean validacaoDoUsuarioRetornada = user.validarUsuario(nome);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
@@ -29,7 +29,7 @@ public class UsuarioValidacaoTest {
 		
 		UsuarioValidacao user = new UsuarioValidacao();
 		boolean validacaoDoUsuarioRetornada = user.validarUsuario(nome);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
@@ -41,7 +41,7 @@ public class UsuarioValidacaoTest {
 		
 		UsuarioValidacao user = new UsuarioValidacao();
 		boolean validacaoDoUsuarioRetornada = user.validarUsuario(nome);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
@@ -53,7 +53,7 @@ public class UsuarioValidacaoTest {
 		
 		UsuarioValidacao user = new UsuarioValidacao();
 		boolean validacaoDoUsuarioRetornada = user.validarUsuario(nome);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
@@ -66,7 +66,7 @@ public class UsuarioValidacaoTest {
 		
 		UsuarioValidacao user = new UsuarioValidacao();
 		boolean validacaoDoUsuarioRetornada = user.validarEmail(email);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(true, validacaoDoUsuarioRetornada);
 		
 	}
 	
@@ -78,7 +78,19 @@ public class UsuarioValidacaoTest {
 		
 		UsuarioValidacao user = new UsuarioValidacao();
 		boolean validacaoDoUsuarioRetornada = user.validarTelefone(telefone);
-		Assert.assertEquals(false, validacaoDoUsuarioRetornada);
+		assertEquals(false, validacaoDoUsuarioRetornada);
+		
+	}
+	
+	@Test
+	public void naoValidarNumeroDeTelefoneNulo() {
+		
+		String telefone = null;
+		
+		
+		UsuarioValidacao user = new UsuarioValidacao();
+		boolean validacaoDoUsuarioRetornada = user.validarTelefone(telefone);
+		assertEquals(false, validacaoDoUsuarioRetornada);
 		
 	}
 	
