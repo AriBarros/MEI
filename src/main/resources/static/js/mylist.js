@@ -32,6 +32,12 @@
 
 */
 
+
+let mei;
+let endereco;
+let servico;
+let oferta;
+
 function cadastrar()
 {
 	
@@ -295,6 +301,14 @@ function createTable(){
 	
 }
 	
+
+
+
+
+
+
+
+
 	
 function cadastrarMei()
 {
@@ -319,8 +333,24 @@ function cadastrarMei()
 				body: JSON.stringify(novo_mei)
 			}). then(function (response)
 			{
+				
 			
-				cadastrarEndereco();
+				if(response.status >= 200 && response.status <=300)
+					{
+					
+					response.json().then(function(data){
+					
+						
+					    mei = data.id;
+						cadastrarEndereco();
+						
+						
+						
+					})
+					
+					
+					}
+				
 				
 			}).catch(function (error){
 				
@@ -357,7 +387,26 @@ function cadastrarMei()
 	}). then(function (response)
 	{
 	
-		cadastrarServico();
+		
+		if(response.status >= 200 && response.status <=300)
+		{
+		
+		response.json().then(function(data){
+		
+			
+		    endereco = data.id;
+			
+		    cadastrarServico();
+			
+			
+		})
+		
+		
+		}
+	
+		
+		
+		
 		
 		
 	}).catch(function (error){
@@ -391,8 +440,28 @@ function cadastrarServico()
 				body: JSON.stringify(novo_servico)
 			}). then(function (response)
 			{
+				
+				
+				if(response.status >= 200 && response.status <=300)
+				{
+				
+				response.json().then(function(data){
+				
+					
+				    servico = data.id;
+					
+				    cadastrarOferta();
+					
+					
+				})
+				
+				
+				}
+				
+				
+				
 			
-				cadastrarOferta();
+				
 				
 			}).catch(function (error){
 				
@@ -425,6 +494,27 @@ function cadastrarOferta()
 			}). then(function (response)
 			{
 			
+				
+				
+
+				if(response.status >= 200 && response.status <=300)
+				{
+				
+				response.json().then(function(data){
+				
+					
+				    oferta = data.id;
+					
+				  
+					
+					
+				})
+				
+				
+				}
+				
+				
+				
 
 				alert("Cadastro Feito com Sucesso !!");
 				
@@ -437,6 +527,158 @@ function cadastrarOferta()
 
 
 }
+
+
+
+
+
+function linkarEndereco()
+{
+	
+	
+	
+	
+	fetch("/mei/"+mei+"/"+endereco,
+			{
+				
+				
+				method: "PUT"
+				
+				
+
+			}). then(function (response)
+			{
+			
+				
+				
+
+				if(response.status >= 200 && response.status <=300)
+				{
+				
+				response.json().then(function(data){
+				
+					
+				   
+					linkarServico()
+				  
+					
+					
+				})
+				
+				
+				}
+				
+				
+				
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
+
+
+}
+
+
+function linkarServico()
+{
+	
+	
+	
+	
+	fetch("/mei/servico"+mei+"/"+servico,
+			{
+				
+				
+				method: "PUT"
+				
+				
+
+			}). then(function (response)
+			{
+			
+				
+				
+
+				if(response.status >= 200 && response.status <=300)
+				{
+				
+				response.json().then(function(data){
+				
+					
+				   
+					linkarOferta()
+				  
+					
+					
+				})
+				
+				
+				}
+				
+				
+				
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
+
+
+}
+
+function linkarOferta()
+{
+	
+	
+	
+	
+	fetch("/mei/oferta"+mei+"/"+oferta,
+			{
+				
+				
+				method: "PUT"
+				
+				
+
+			}). then(function (response)
+			{
+			
+				
+				
+
+				if(response.status >= 200 && response.status <=300)
+				{
+				
+				response.json().then(function(data){
+				
+					
+				   
+					
+					alert("Cadastro Feito com Sucesso !!");
+					
+					
+				})
+				
+				
+				}
+				
+				
+				
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
+
+
+}
+
+
+
 
 
 
