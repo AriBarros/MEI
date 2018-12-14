@@ -235,7 +235,7 @@ function atualizarEndereco()
 	
 	
 	
-	let novo_endereco = {"estado": document.getElementById("estado2").value, 
+	let endereco1 = {"estado": document.getElementById("estado2").value, 
 			"cidade": document.getElementById("cidade2").value, 
 			"bairro": document.getElementById("bairro2").value, 
 			"rua": document.getElementById("rua2").value, 
@@ -252,7 +252,7 @@ function atualizarEndereco()
 			"content-type": "application/JSON"
 		},
 		
-		body: JSON.stringify(novo_endereco)
+		body: JSON.stringify(endereco1)
 	}). then(function (response)
 	{
 	
@@ -312,7 +312,7 @@ function createTable(){
 	
 function cadastrarMei()
 {
-	let novo_mei = {"nome": document.getElementById("nome").value, 
+	let novoMei1 = {"nome": document.getElementById("nome").value, 
 			"telefone": document.getElementById("tel").value, 
 			"cnpj": document.getElementById("cnpj").value, 
 			"DescricaoPessoal": document.getElementById("descP").value, 
@@ -330,7 +330,7 @@ function cadastrarMei()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(novo_mei)
+				body: JSON.stringify(novoMei1)
 			}). then(function (response)
 			{
 				
@@ -364,7 +364,7 @@ function cadastrarMei()
 
 function cadastrarEndereco()
 {
-	let novo_mei = {"nome": document.getElementById("nome").value, 
+	let novoMei1 = {"nome": document.getElementById("nome").value, 
 			"telefone": document.getElementById("tel").value, 
 			"cnpj": document.getElementById("cnpj").value, 
 			"DescricaoPessoal": document.getElementById("descP").value, 
@@ -382,7 +382,7 @@ function cadastrarEndereco()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(novo_mei)
+				body: JSON.stringify(novoMei1)
 			}). then(function (response)
 			{
 				
@@ -416,7 +416,7 @@ function cadastrarServico()
 {
 	
 	
-	let servico = {"nome": document.getElementById("nomeS").value, 
+	let servico1 = {"nome": document.getElementById("nomeS").value, 
 			"descricao": document.getElementById("descS").value};
 	
 	
@@ -429,7 +429,7 @@ function cadastrarServico()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(servico)
+				body: JSON.stringify(servico1)
 			}). then(function (response)
 			{
 				
@@ -469,7 +469,7 @@ function cadastrarServico()
 function cadastrarOferta()
 {
 	
-	let oferta = {"preco": document.getElementById("preco").value, 
+	let oferta1 = {"preco": document.getElementById("preco").value, 
 			"descrao": document.getElementById("disp").value};
 	
 	
@@ -482,7 +482,7 @@ function cadastrarOferta()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(oferta)
+				body: JSON.stringify(oferta1)
 			}). then(function (response)
 			{
 			
@@ -674,7 +674,7 @@ function linkarOferta()
 function logar()
 {
 	
-	let usuario= {"email": document.getElementById('userEmail').value, 
+	let usuario1 = {"email": document.getElementById('userEmail').value, 
 			"senha": document.getElementById('userSenha').value};
 	
 	
@@ -687,7 +687,7 @@ function logar()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(usuario)
+				body: JSON.stringify(usuario1)
 			}). then(function (response)
 			{
 			
