@@ -63,7 +63,7 @@ function cadastrar()
 	}). then(function (response)
 	{
 	
-		createTable();
+		
 		
 	}).catch(function (error){
 		
@@ -362,69 +362,61 @@ function cadastrarMei()
 }
 
 
- function cadastrarEndereco()
+function cadastrarEndereco()
 {
+	let novo_mei = {"nome": document.getElementById("nome").value, 
+			"telefone": document.getElementById("tel").value, 
+			"cnpj": document.getElementById("cnpj").value, 
+			"DescricaoPessoal": document.getElementById("descP").value, 
+			"email": document.getElementById("email").value,
+			"senha": document.getElementById("senha").value};
 	
 	
-	let novo_endereco = {"estado": document.getElementById("estado").value, 
-			"cidade": document.getElementById("cidade").value, 
-			"bairro": document.getElementById("bairro").value, 
-			"rua": document.getElementById("rua").value, 
-			"numero": document.getElementById("numero").value};
 	
-	
-	
-	fetch("/endereco",
-	{
-		
-		
-		method: "POST",
-		headers: {
-			"content-type": "application/JSON"
-		},
-		
-		body: JSON.stringify(novo_endereco)
-	}). then(function (response)
-	{
-	
-		
-		if(response.status >= 200 && response.status <=300)
-		{
-		
-		response.json().then(function(data){
-		
+	fetch("/mei",
+			{
+				
+				
+				method: "POST",
+				headers: {
+					"content-type": "application/JSON"
+				},
+				
+				body: JSON.stringify(novo_mei)
+			}). then(function (response)
+			{
+				
 			
-		    endereco = data.id;
-			
-		    cadastrarServico();
-			
-			
-		})
-		
-		
-		}
-	
-		
-		
-		
-		
-		
-	}).catch(function (error){
-		
-		console.log(error);
-		
-	});
-	
+				if(response.status >= 200 && response.status <=300)
+					{
+					
+					response.json().then(function(data){
+					
+						
+					    mei = data.id;
+						cadastrarEndereco();
+						
+						
+						
+					})
+					
+					
+					}
+				
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
 
 
-}
- 
- 
+} 
 function cadastrarServico()
 {
 	
 	
-	let novo_servico = {"nome": document.getElementById("nomeS").value, 
+	let servico = {"nome": document.getElementById("nomeS").value, 
 			"descricao": document.getElementById("descS").value};
 	
 	
@@ -437,7 +429,7 @@ function cadastrarServico()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(novo_servico)
+				body: JSON.stringify(servico)
 			}). then(function (response)
 			{
 				
@@ -477,7 +469,7 @@ function cadastrarServico()
 function cadastrarOferta()
 {
 	
-	let nova_oferta = {"preco": document.getElementById("preco").value, 
+	let oferta = {"preco": document.getElementById("preco").value, 
 			"descrao": document.getElementById("disp").value};
 	
 	
@@ -490,7 +482,7 @@ function cadastrarOferta()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(nova_oferta)
+				body: JSON.stringify(oferta)
 			}). then(function (response)
 			{
 			
@@ -676,6 +668,51 @@ function linkarOferta()
 
 
 }
+
+
+
+function logar()
+{
+	
+	let usuario= {"email": document.getElementById('userEmail').value, 
+			"senha": document.getElementById('userSenha').value};
+	
+	
+	fetch("/mei/log",
+			{
+				
+				
+				method: "POST",
+				headers: {
+					"content-type": "application/JSON"
+				},
+				
+				body: JSON.stringify(usuario)
+			}). then(function (response)
+			{
+			
+				
+				
+				response.json().then(function(data){
+				
+					
+				    alert (""+data.id);
+				
+					
+				})
+				
+			
+				
+			}).catch(function (error){
+				
+				console.log(error);
+				
+			});
+
+
+}
+
+
 
 
 

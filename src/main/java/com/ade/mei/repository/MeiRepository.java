@@ -8,4 +8,6 @@ import com.ade.mei.model.Mei;
 @Repository
 public interface MeiRepository extends JpaRepository <Mei, Long>{
 
+	public Mei findByEmailAndSenha(String email, String senha);
+	
 }

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Mei extends Usuario {
 	
+	
 	@Column
 	private String cnpj;
 	

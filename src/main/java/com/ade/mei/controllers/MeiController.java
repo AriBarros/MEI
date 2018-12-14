@@ -1,5 +1,6 @@
 package com.ade.mei.controllers;
 
+import java.util.Map;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ade.mei.model.Categoria;
@@ -59,6 +61,17 @@ public class MeiController {
 	public Mei criarNovoMei(@Valid @RequestBody Mei  mei) {
 		return meiRepository.save(mei);
 	}
+	
+	
+	@PostMapping("/mei/log")
+	public Mei LoginMei(@RequestBody Map<String, String> params) {
+		 
+		String email = params.get("email");
+		String senha = params.get("senha");
+		
+		return meiRepository.findByEmailAndSenha(email, senha);
+	}
+	
 	
 	@PutMapping("/mei/{meiId}")
 	public Mei atualizarMei(@PathVariable Long meiId,
