@@ -415,19 +415,24 @@ function logar()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(usuario1)
+				body: JSON.stringify(usuario)
 			}). then(function (response)
 			{
 			
-				
+				if(response.status >= 200 && response.status <=300)
+				{
 				
 				response.json().then(function(data){
 				
 					
-				    alert (""+data.id);
+				    localStorage.setItem("usuario",data.id);
+				    //console.log(localStorage);
+				    window.location.href = 	"http://localhost:8080/perfilUsuario.html";
+				    
 				
 					
 				})
+				}
 				
 			
 				
