@@ -1,313 +1,7 @@
-
-/*function cadastrar()
-{
-	let xhr2 = new XMLHttpRequest();
-	xhr2.open('POST', '/endereco');
-	
-	xhr2.onload = function(){
-
-		if(this.status == 200){
-			
-	
-			updateTable();
-
-			
-
-		}
-	};
-	
-	xhr2.setRequestHeader('Content-Type', 'application/json');
-	
-	let novo_endereco = {"estado": document.getElementById("estado").value, 
-			"cidade": document.getElementById("cidade").value, 
-			"bairro": document.getElementById("bairro").value, 
-			"rua": document.getElementById("rua").value, 
-			"numero": document.getElementById("numero").value};
-	
-	
-	xhr2.send(JSON.stringify(novo_endereco));
-	
-
-}
-
-*/
-
-
 let mei;
 let endereco;
 let servico;
 let oferta;
-
-function cadastrar()
-{
-	
-	
-	let novo_endereco = {"estado": document.getElementById("estado").value, 
-			"cidade": document.getElementById("cidade").value, 
-			"bairro": document.getElementById("bairro").value, 
-			"rua": document.getElementById("rua").value, 
-			"numero": document.getElementById("numero").value};
-	
-	
-	
-	fetch("/endereco",
-	{
-		
-		
-		method: "POST",
-		headers: {
-			"content-type": "application/JSON"
-		},
-		
-		body: JSON.stringify(novo_endereco)
-	}). then(function (response)
-	{
-	
-		
-		
-	}).catch(function (error){
-		
-		console.log(error);
-		
-	});
-
-
-}
-
-
-/*function deletarEndereco()
-{
-	let xhr2 = new XMLHttpRequest();
-	xhr2.open('DELETE', '/endereco/'+document.getElementById("end").value);
-	
-	xhr2.onload = function()
-	{
-		
-		if(this.status == 200)
-			{
-			
-			createTable()
-			
-			}
-		
-	};
-	
-	xhr2.send();
-
-}
-*/
-
-function deletarEndereco()
-{
-	
-
-	fetch("/endereco/"+document.getElementById("end").value,
-	{
-		
-		
-		method: "DELETE",
-		
-	}). then(function (response)
-	{
-	
-		createTable();
-		
-	}).catch(function (error){
-		
-		console.log(error);
-		
-	});
-
-	
-
-}
-
-
-/*function updateTable()
-{
-	let xhr2 = new XMLHttpRequest();
-	xhr2.open('GET', '/endereco');
-	
-	xhr2.onload = function() {
-		
-		if(this.status == 200) {
-			
-			let r = JSON.parse(this.responseText);
-			
-				let tb = document.getElementById("enderecos");
-				
-				let p = r.content[r.content.length-1];
-				console.log(r);
-
-					tb.innerHTML +=  `<tr><th>${p.id}</th><th>${p.estado}</th><th>${p.cidade}</th><th>${p.bairro}</th><th>${p.rua}</th><th>${p.numero}</th></tr>`
-				}
-		
-		
-	}; 
-		
-	xhr2.send();
-
-
-
-}
-
-*/
-
-/*function atualizarEndereco()
-{
-	
-	let xhr2 = new XMLHttpRequest();
-	xhr2.open('PUT', '/endereco/'+document.getElementById("endAt").value);
-	
-	xhr2.onload = function(){
-
-		if(this.status == 200){
-	
-			document.getElementById("endAt").value = '';
-	
-			createTable();
-
-			
-
-		}
-	};
-	
-	xhr2.setRequestHeader('Content-Type', 'application/json');
-	
-	let novo_endereco = {"estado": document.getElementById("estado2").value, 
-			"cidade": document.getElementById("cidade2").value, 
-			"bairro": document.getElementById("bairro2").value, 
-			"rua": document.getElementById("rua2").value, 
-			"numero": document.getElementById("numero2").value};
-	
-	
-	xhr2.send(JSON.stringify(novo_endereco));
-	
-	
-	
-	novo_endereco = {"estado": document.getElementById("estado2").value = '', 
-			"cidade": document.getElementById("cidade2").value = '', 
-			"bairro": document.getElementById("bairro2").value = '', 
-			"rua": document.getElementById("rua2").value = '', 
-			"numero": document.getElementById("numero2").value = ''};
-	
-
-
-
-
-
-}
-*/
-
-/*function createTable(){
-		let xhr2 = new XMLHttpRequest();
-		xhr2.open('GET', '/endereco');
-		
-		xhr2.onload = function() {
-			
-			if(this.status == 200) {
-				
-					let r = JSON.parse(this.responseText);
-					console.log(r);
-					
-					
-					let tb = document.getElementById("enderecos");
-					
-					tb.innerHTML = ''
-					for(let i=0; i<r.content.length; i++){
-						let p = r.content[i];
-						tb.innerHTML +=  `<tr><th>${p.id}</th><th>${p.estado}</th><th>${p.cidade}</th><th>${p.bairro}</th><th>${p.rua}</th><th>${p.numero}</th></tr>`
-					}
-			}
-			
-		}; 
-			
-		xhr2.send();
-		
-		
-	}
-*/
-
-
-
-function atualizarEndereco()
-{
-	
-	
-	
-	let endereco1 = {"estado": document.getElementById("estado2").value, 
-			"cidade": document.getElementById("cidade2").value, 
-			"bairro": document.getElementById("bairro2").value, 
-			"rua": document.getElementById("rua2").value, 
-			"numero": document.getElementById("numero2").value};
-	
-	
-	
-	fetch("/endereco/"+document.getElementById("endAt").value,
-	{
-		
-		
-		method: "POST",
-		headers: {
-			"content-type": "application/JSON"
-		},
-		
-		body: JSON.stringify(endereco1)
-	}). then(function (response)
-	{
-	
-		createTable();
-		
-	}).catch(function (error){
-		
-		console.log(error);
-		
-	});
-	
-
-}
-
-
-
-function createTable(){
-	
-	fetch("/endereco")
-		.then(function(response){
-			
-			if(response.status >= 200 && response.status <=300){
-				
-				response.json().then(function(data){
-					
-					let tb = document.getElementById("enderecos");
-					
-					tb.innerHTML = ''
-					
-					tb.innerHTML = "<tr><th>Id</th><th>Estado</th><th>Cidade</th><th>Bairro</th><th>Rua</th><th>Numero</th></tr>"
-					
-						for(let i =0; i<data.content.length; i++){
-							let p = data.content[i];
-							 tb.innerHTML +=  `<tr><th>${p.id}</th><th>${p.estado}</th><th>${p.cidade}</th><th>${p.bairro}</th><th>${p.rua}</th><th>${p.numero}</th></tr>`
-						}
-				})
-				
-			}
-		
-			
-		
-		}).catch(function(error){
-			console.log(error);
-		});
-		
-	
-}
-	
-
-
-
-
-
-
-
 
 	
 function cadastrarMei()
@@ -497,6 +191,30 @@ function cadastrarOferta()
 				
 					
 				    oferta = data.id;
+				    alert("Cadastro feito com sucesso!!");
+				    
+				    //lIMPAR CAMPOS
+				    
+				            document.getElementById("nome").value = '';
+							document.getElementById("tel").value = ''; 
+							document.getElementById("cnpj").value = '';
+							document.getElementById("email").value = '';
+							document.getElementById("senha").value = '';
+				    
+							document.getElementById("estado").value = ''; 
+						    document.getElementById("cidade").value = ''; 
+						    document.getElementById("bairro").value = ''; 
+						    document.getElementById("rua").value = ''; 
+						    document.getElementById("numero").value = '';
+						    
+						    document.getElementById("servico_nome").value = ''; 
+							document.getElementById("servico_descricao").value = ''; 
+							
+							document.getElementById("preco").value = ''; 
+							document.getElementById("disp").value = '';
+						
+				
+							window.location.href = "http://localhost:8080/";
 					
 				  
 					
@@ -509,7 +227,7 @@ function cadastrarOferta()
 				
 				
 
-				alert("Cadastro Feito com Sucesso !!");
+			
 				
 				
 			}).catch(function (error){
@@ -552,7 +270,7 @@ function linkarEndereco()
 				
 					
 				   
-					linkarServico()
+					linkarServico();
 				  
 					
 					
@@ -675,8 +393,17 @@ function linkarOferta()
 function logar()
 {
 	
-	let usuario1 = {"email": document.getElementById('userEmail').value, 
+	let usuario = {"email": document.getElementById('userEmail').value, 
 			"senha": document.getElementById('userSenha').value};
+	
+	
+	
+	if(usuario.email == "root" &&  usuario.senha == "root" )
+	{
+		window.location.href = "http://localhost:8080/index1.html";
+	}
+	
+	
 	
 	
 	fetch("/mei/log",
@@ -720,4 +447,3 @@ function logar()
 
 
 
-//createTable();
