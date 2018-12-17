@@ -312,13 +312,14 @@ function createTable(){
 	
 function cadastrarMei()
 {
-	let novoMei1 = {"nome": document.getElementById("nome").value, 
+	let novoMei = {"nome": document.getElementById("nome").value, 
 			"telefone": document.getElementById("tel").value, 
-			"cnpj": document.getElementById("cnpj").value, 
-			"DescricaoPessoal": document.getElementById("descP").value, 
+			"cnpj": document.getElementById("cnpj").value,
 			"email": document.getElementById("email").value,
 			"senha": document.getElementById("senha").value};
 	
+	
+	console.log(novoMei);
 	
 	
 	fetch("/mei",
@@ -330,7 +331,7 @@ function cadastrarMei()
 					"content-type": "application/JSON"
 				},
 				
-				body: JSON.stringify(novoMei1)
+				body: JSON.stringify(novoMei)
 			}). then(function (response)
 			{
 				
@@ -364,103 +365,103 @@ function cadastrarMei()
 
 function cadastrarEndereco()
 {
-	let novoMei1 = {"nome": document.getElementById("nome").value, 
-			"telefone": document.getElementById("tel").value, 
-			"cnpj": document.getElementById("cnpj").value, 
-			"DescricaoPessoal": document.getElementById("descP").value, 
-			"email": document.getElementById("email").value,
-			"senha": document.getElementById("senha").value};
+	let novo_endereco = {"estado": document.getElementById("estado").value, 
+			"cidade": document.getElementById("cidade").value, 
+			"bairro": document.getElementById("bairro").value, 
+			"rua": document.getElementById("rua").value, 
+			"numero": document.getElementById("numero").value};
 	
 	
+	console.log(novo_endereco);
+	fetch("/endereco",
+	{
+		
+		
+		method: "POST",
+		headers: {
+			"content-type": "application/JSON"
+		},
+		
+		body: JSON.stringify(novo_endereco)
+	}). then(function (response)
+	{
 	
-	fetch("/mei",
-			{
-				
-				
-				method: "POST",
-				headers: {
-					"content-type": "application/JSON"
-				},
-				
-				body: JSON.stringify(novoMei1)
-			}). then(function (response)
-			{
-				
-			
-				if(response.status >= 200 && response.status <=300)
-					{
-					
-					response.json().then(function(data){
-					
-						
-					    mei = data.id;
-						cadastrarEndereco();
-						
-						
-						
-					})
-					
-					
-					}
-				
-				
-			}).catch(function (error){
-				
-				console.log(error);
-				
-			});
+		
 
+		if(response.status >= 200 && response.status <=300)
+			{
+			
+			response.json().then(function(data){
+			
+				
+			    endereco = data.id;
+			    cadastrarServico();
+				
+				
+				
+				
+			})
+			
+			
+			}
+		
+		
+	}).catch(function (error){
+		
+		console.log(error);
+		
+	});
 
 } 
+
+
 function cadastrarServico()
 {
 	
+	let novo_servico = {"nome": document.getElementById("servico_nome").value, 
+			"descricao": document.getElementById("servico_descricao").value 
+			};
 	
-	let servico1 = {"nome": document.getElementById("nomeS").value, 
-			"descricao": document.getElementById("descS").value};
 	
-	
+console.log(novo_servico.nome);	
 	fetch("/servico",
+	{
+		
+		
+		method: "POST",
+		headers: {
+			"content-type": "application/JSON"
+		},
+		
+		body: JSON.stringify(novo_servico)
+	}). then(function (response)
+	{
+	
+		
+
+		if(response.status >= 200 && response.status <=300)
 			{
-				
-				
-				method: "POST",
-				headers: {
-					"content-type": "application/JSON"
-				},
-				
-				body: JSON.stringify(servico1)
-			}). then(function (response)
-			{
-				
-				
-				if(response.status >= 200 && response.status <=300)
-				{
-				
-				response.json().then(function(data){
-				
-					
-				    servico = data.id;
-					
-				    cadastrarOferta();
-					
-					
-				})
-				
-				
-				}
-				
-				
-				
+			
+			response.json().then(function(data){
 			
 				
+			    servico = data.id;
+			    cadastrarOferta();
 				
-			}).catch(function (error){
 				
-				console.log(error);
 				
-			});
+				
+			})
 			
+			
+			}
+		
+		
+	}).catch(function (error){
+		
+		console.log(error);
+		
+	});
 	
 	
 }
@@ -470,7 +471,7 @@ function cadastrarOferta()
 {
 	
 	let oferta1 = {"preco": document.getElementById("preco").value, 
-			"descrao": document.getElementById("disp").value};
+			"disponibilidade": document.getElementById("disp").value};
 	
 	
 	fetch("/oferta",
