@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<script type="text/javascript" src="js/mylist.js" async></script>
+	<script type="text/javascript" src="js/adm.js" async></script>
 
 <title>MEI</title>
 
@@ -17,67 +17,30 @@ table{
 	
 	
 	
-	<table id = "enderecos" border=1 cellspacing=0 cellpadding=2 bordercolor="666633">
+	<table id = "usuarios" border=1 cellspacing=0 cellpadding=2 bordercolor="666633">
 	
 	
 		<tr>
 			<th>Id</th>
-			<th>Estado</th>
-			<th>Cidade</th>
-			<th>Bairro</th>
-			<th>Rua</th>
-			<th>Numero</th>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Telefone</th>
 		</tr>
 		
 		
 	</table>
 	
 	<br>
-	
-	<input type="text" name="Estado" id="estado" placeholder="Estado">
-			<br>
-			<input type="text" name="Cidade" id="cidade" placeholder="Cidade">
-			<br>
-			<input type="text" name="Bairro" id="bairro" placeholder="Bairro">
-			<br>
-			<input type="text" name="Rua" id="rua" placeholder="Rua">
-			<br>
-			<input type="text" name="Numero" id="numero" placeholder="Numero">
-
-			<br><br>
-
-			<button onclick="cadastrar()">Cadastrar</button>
 			
 			
 			<br><br>
-			<input type="text" name="Numero" id="end" placeholder="Digite o numero">
-			<button onclick="deletarEndereco()">Deletar</button>
+			<input type="text" name="Numero" id="numero" placeholder="Digite o numero">
+			<button onclick="deletarMei()">Deletar</button>
 			
 			
 			
 	<br><br><br>
-	
-	
-	<input type="text" name="Numero" id="endAt" placeholder="Digite o numero">
-	<br>
-	<input type="text" name="Estado2" id="estado2" placeholder="Estado">
-			<br>
-			<input type="text" name="Cidade2" id="cidade2" placeholder="Cidade">
-			<br>
-			<input type="text" name="Bairro2" id="bairro2" placeholder="Bairro">
-			<br>
-			<input type="text" name="Rua2" id="rua2" placeholder="Rua">
-			<br>
-			<input type="text" name="Numero2" id="numero2" placeholder="Numero">
-
-			<br><br>
-
-			<button onclick="atualizarEndereco()">Atualizar</button>
-			
-	
-	
-	
-	
+		
 
 </body>
 </html>
